@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>welcome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar color="danger">
+    <ion-title>Ionic Modal</ion-title>
+  </ion-toolbar>
+  <ion-content class="ion-padding" color="light">
+    <h1>Modal Controller</h1>
+    <ion-button color="primary" (click)="showModal()">
+      Show
+    </ion-button>
+    <p *ngIf="dataReturned">{{dataReturned}}</p>
+  </ion-content>
+  <ion-item>
+    <ion-label>Your Name</ion-label>
+    <ion-input type="text" placeholder="Enter Your Name" [(ngModel)]="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Your Email</ion-label>
+    <ion-input type="email" placeholder="Enter Your email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="select">
+      <ion-select-option value="f">Female</ion-select-option>
+      <ion-select-option value="m">Male</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Toppings</ion-label>
+    <ion-select multiple="true" cancelText="Nah" okText="Okay!" [(ngModel)]="multiple">
+      <ion-select-option value="bacon">Bacon</ion-select-option>
+      <ion-select-option value="olives">Black Olives</ion-select-option>
+      <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+      <ion-select-option value="peppers">Green Peppers</ion-select-option>
+      <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Pick date</ion-label>
+    <ion-datetime presentation="date" [(ngModel)]="date"></ion-datetime>
+  </ion-item>
+  <ion-col size="12" class="ion-text-center">
+    <ion-button (click)="goTonextP()" expand="block" shape="round">
+      Click me
+    </ion-button>
+  </ion-col>
+
+</ion-content>

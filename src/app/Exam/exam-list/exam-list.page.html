@@ -1,0 +1,94 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>ExamList
+      <ion-buttons (click)="goback()">
+        Back<ion-icon slot="end" name=""></ion-icon>
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Exam-List</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="examform"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+  <ion-item>
+    <ion-label>KeyWord :</ion-label>
+    <ion-input type="text" placeholder="Your KeyWord" [(ngModel)]="keyword"></ion-input>
+  </ion-item>
+
+  <ion-item id="date-from">
+    <ion-label>Starting Date :</ion-label><br>
+    <ion-input value="{{ FromDate | date: 'dd.MM.yyyy' }}" id="date-from" class="ion-text-end"></ion-input>
+    <ion-popover trigger="date-from" size="cover">
+      <ng-template>
+        <ion-datetime presentation="date" displayFormat="dd.MM.yyyy" [(ngModel)]="FromDate"></ion-datetime>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+
+  <ion-item id="date-todate">
+    <ion-label>Ending Date :</ion-label><br>
+    <ion-input value="{{ ToDate | date: 'dd.MM.yyyy' }}" id="date-todate" class="ion-text-end"></ion-input>
+    <ion-popover trigger="date-todate" size="cover">
+      <ng-template>
+        <ion-datetime presentation="date" displayFormat="dd.MM.yyyy" [(ngModel)]="ToDate"></ion-datetime>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+
+  <ion-button color="secondary" (click)="goToapi()" expand="block" shape="round">
+    Submit
+  </ion-button>
+  <!-- <ion-item *ngFor="let item of TableList" (click)="openExmDetails(item)">
+    <ion-item>
+      <ion-item>{{item.exm_id}}</ion-item>
+      <ion-item>{{item.exm_name}}</ion-item>
+      <ion-item>{{item.exm_date}}</ion-item>
+      <ion-item>{{item.exm_time}}</ion-item>
+
+      <ion-button color="warning" slot="end" shape="round" (click)="doConfirm()" name="ios-remove-circle-outline">Delete
+      </ion-button>
+
+    </ion-item>
+
+  </ion-item> -->
+  <ion-item *ngFor="let item of TableList;let i=index" lines="full">
+    <ion-label slot="start">
+      <p>
+        <ion-text>{{item.exm_id}}</ion-text>
+      </p>
+      <p>
+        <ion-text>{{item.exm_name}}</ion-text>
+      </p>
+      <p>
+        <ion-text>{{item.exm_date}}</ion-text>
+      </p>
+      <p>
+        <ion-text>{{item.exm_time}}</ion-text>
+      </p>
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="doConfirm(item.exm_id,i)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" (click)="openExmDetails(item)">
+        <ion-icon name="list"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
+  
+
+</ion-content>

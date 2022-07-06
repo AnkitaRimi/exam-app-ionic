@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>moduleP</ion-title>
+    <ion-icon name='close-circle' (click)='dismiss()' style='float: right;'></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>  
+    <ion-item *ngFor="let singlePerson of userName" (click)="selectedUser(singlePerson)">  
+      <ion-avatar slot="start">  
+        <img src="assets/icon/favicon.png"/>  
+      </ion-avatar>  
+      <ion-label>
+        <p>
+          Name :{{singlePerson.paramNAME}}
+        </p>  
+        <p>
+          Sports:{{singlePerson.paramINTERESTEDSPORTs}}
+        </p> 
+      </ion-label>  
+    </ion-item>  
+  </ion-list>  
+
+</ion-content>

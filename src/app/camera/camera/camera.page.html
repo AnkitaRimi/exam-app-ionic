@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>camera</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="register"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button size="small" (click)="getPicture()">
+    <ion-icon name="camera" slot="start"></ion-icon>
+    <ion-label>Upload Image</ion-label>
+  </ion-button>
+  <ion-button size="small" (click)="getPicture()">
+    <ion-icon name="image" slot="start"></ion-icon>
+    <ion-label>Gallery</ion-label>
+  </ion-button>
+  <input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)"/>
+
+  <ion-card *ngIf="photo">
+    <ion-card-content>
+      <img [src]="photo">
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

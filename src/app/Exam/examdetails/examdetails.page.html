@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>examdetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>{{item.exm_id}}</ion-item>
+  <ion-item>{{item.exm_name}}</ion-item>
+  <ion-item>{{item.exm_date}}</ion-item>
+  <ion-item>{{item.exm_time}}</ion-item>
+  <ion-item *ngFor="let item of Examdetails">
+    <ion-item>{{item.exmd_subject_name}}</ion-item>
+    <ion-item>{{item.exmd_subject_code}}</ion-item>
+    <ion-item>{{item.exmd_full_marks}}</ion-item>
+    <ion-item>{{item.exmd_cutoff_marks}}</ion-item>
+  </ion-item> 
+
+
+
+</ion-content>

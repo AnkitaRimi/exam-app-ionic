@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ singlePost.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+    <ion-item>
+      <!-- <ion-item *ngFor="let singledetails of details"> -->
+        {{ singlePost.body }}
+      </ion-item>
+    
+      <ion-button (click)="comment(singleComment)"color="warning">View Comment</ion-button>
+      <ion-item *ngFor="let singledetails of comments">{{singledetails.id}} {{singledetails.body}}</ion-item>
+     <!-- <ion-item>{{ singleComment.id}} -->
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

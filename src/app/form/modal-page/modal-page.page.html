@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modalPage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let singlePerson of sports">
+      <ion-label>
+        <p>
+          Sports:{{singlePerson.paramInterestedS}}
+        </p>
+      </ion-label>
+      <ion-checkbox (ionChange)="funcFilter(singlePerson)" [value]="singlePerson.isChecked"></ion-checkbox>
+    </ion-item>
+    <ion-button (click)="dismiss()">ok</ion-button>
+
+  </ion-list>
+
+</ion-content>

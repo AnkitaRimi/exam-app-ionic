@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Exam-Form</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="register"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label>Exam Name</ion-label>
+    <ion-input type="exm_name" placeholder="Exam Name" [(ngModel)]="exm_name"></ion-input>
+  </ion-item>
+
+  <ion-item id="date">
+    <ion-label>Date-Of-Exam:</ion-label><br>
+    <ion-input value="{{ exm_date | date: 'dd.MM.yyyy' }}" id="date" class="ion-text-end"></ion-input>
+    <ion-popover trigger="date" size="cover">
+      <ng-template>
+        <ion-datetime presentation="date" displayFormat="dd.MM.yyyy" [(ngModel)]="exm_date"></ion-datetime>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+
+  <ion-item id="time">
+    <ion-label>Time</ion-label>
+    <ion-input value="{{ exm_time | date: 'hh-mm-A' }}" id="time" class="ion-text-end"></ion-input>
+
+    <ion-popover trigger="time" size="cover">
+      <ng-template>
+
+        <ion-datetime presentation="time" displayFormat="hh-mm-A" [(ngModel)]="exm_time"></ion-datetime>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>exmd_subject_name: </ion-label>
+    <ion-input type="text" placeholder="subject name" name="subject_name" [(ngModel)]="exmd_subject_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>exmd_subject_code: </ion-label>
+    <ion-input type="text" placeholder="subject code" name="subject_code" [(ngModel)]="exmd_subject_code"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>exmd_full_marks: </ion-label>
+    <ion-input type="text" placeholder="full marks" name="subject_full_marks" [(ngModel)]="exmd_full_marks"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>exmd_cutoff_marks: </ion-label>
+    <ion-input type="text" placeholder="cutoff marks" name="subject_cut_marks" [(ngModel)]="exmd_cutoff_marks">
+    </ion-input>
+  </ion-item>
+  <ion-button color="warning" (click)="addSubject()" expand="small" shape="round">
+    Add Subject
+  </ion-button>
+  <ion-button color="secondary" (click)="goTonextP()" expand="medium" shape="round">
+    Submit
+  </ion-button>
+
+
+
+
+
+</ion-content>

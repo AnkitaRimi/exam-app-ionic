@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>postList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item *ngFor="let singlePost of posts" (click)="openDetails(singlePost)">
+    {{ singlePost.title }}
+  </ion-item>
+
+</ion-content>
